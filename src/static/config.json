@@ -223,5 +223,7 @@
     "allowSettingsModal": true,
     "allowDatabaseModal": true,
     "showTwitterLink": true,
-    "showFeedbackLink": true
+    "showFeedbackLink": true,
+    "syncBackend": true,
+    "syncBackendURL": "ws://localhost:3000"
   }

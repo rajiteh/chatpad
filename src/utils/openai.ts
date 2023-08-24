@@ -17,6 +17,9 @@ function getClient(
     }),
     ...(apiType === "custom" && { basePath: basePath }),
   });
+
+  delete configuration.baseOptions.headers['User-Agent'];
+
   return new OpenAIApi(configuration);
 }
 
@@ -43,7 +46,7 @@ export async function createStreamChatCompletion(
             setTotalTokens(chatId, content);
           }
         },
-        onDone(stream) {},
+        onDone(stream) { },
         onError(error, stream) {
           console.error(error);
         },

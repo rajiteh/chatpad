@@ -1,0 +1,19 @@
+{
+  "name": "chatpad-backend",
+  "private": true,
+  "description": "Backend component for chatpad accepting synchonrization",
+  "scripts": {
+    "serve": "ts-node server.ts"
+  },
+  "dependencies": {
+    "koa": "^2.14.2",
+    "uuid": "^9.0.0",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.1",
+    "@types/uuid": "^9.0.2",
+    "@types/ws": "^8.5.5",
+    "@types/koa": "^2.13.8"
+  }
+}

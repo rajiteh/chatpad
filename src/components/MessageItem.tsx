@@ -39,6 +39,7 @@ export function MessageItem({ message }: { message: Message }) {
           )}
           {message.role === "assistant" && <LogoIcon style={{ height: 32 }} />}
           <Box sx={{ flex: 1, width: 0 }} className="markdown">
+            <Text size="sm">{message.createdAt.toString()}</Text>
             <ReactMarkdown
               children={message.content}
               remarkPlugins={[remarkGfm]}

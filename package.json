@@ -18,8 +18,8 @@
     "@types/react-dom": "^18.0.11",
     "buffer": "^5.7.1",
     "parcel": "^2.8.3",
-    "path-browserify": "^1.0.1",
     "parcel-reporter-static-files-copy": "^1.5.0",
+    "path-browserify": "^1.0.1",
     "process": "^0.11.10"
   },
   "dependencies": {
@@ -36,7 +36,9 @@
     "@types/react-dom": "18.0.11",
     "dexie": "^3.2.3",
     "dexie-export-import": "^4.0.6",
+    "dexie-observable": "^4.0.1-beta.13",
     "dexie-react-hooks": "^1.1.3",
+    "dexie-syncable": "^4.0.1-beta.13",
     "downloadjs": "^1.4.7",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
@@ -51,6 +53,7 @@
     "react-icons": "^4.8.0",
     "react-markdown": "^8.0.6",
     "remark-gfm": "^3.0.1",
+    "sync-client": "../../sync_client",
     "typescript": "4.9.5"
   }
 }

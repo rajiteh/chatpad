@@ -16,18 +16,20 @@ interface Config {
     allowDatabaseModal: boolean;
     showTwitterLink: boolean;
     showFeedbackLink: boolean;
+    syncBackend: boolean;
+    syncBackendURL: string;
 }
 
 interface AvailableModel {
     value: string;
     label: string;
 }
-  
+
 interface WritingCharacter {
     label: string;
     value: string;
 }
-  
+
 interface WritingFormat {
     value: string;
     label: string;

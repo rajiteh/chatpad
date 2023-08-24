@@ -1,6 +1,9 @@
 import Dexie, { Table } from "dexie";
+import "dexie-observable";
+import "dexie-syncable";
 import "dexie-export-import";
 import { config } from "../utils/config";
+import syncProtocol from './syncProtocol';
 
 export interface Chat {
   id: string;
@@ -41,6 +44,9 @@ export class Database extends Dexie {
   settings!: Table<Settings>;
 
   constructor() {
+
+    Dexie.Syncable.registerSyncProtocol('websocket', syncProtocol)
+
     super("chatpad");
     this.version(2).stores({
       chats: "id, createdAt",
@@ -48,6 +54,13 @@ export class Database extends Dexie {
       prompts: "id, createdAt",
       settings: "id",
     });
+
+    if (config.syncBackend) {
+      this.syncable.connect('websocket', config.syncBackendURL).catch(err => {
+        console.error(`Failed to connect to database: ${err}`);
+      });
+    }
+
 
     this.on("populate", async () => {
       db.settings.add({
